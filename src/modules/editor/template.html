@@ -1,0 +1,89 @@
+<h1>Editor</h1>
+
+<button on-click="addDefaultInstance();">ADD INSTANCE</button>
+
+<div repeat="instances" id="foolish" repeat-as="something" repeat-some="{{'thing'}}" repeatable="{{'nope'}}">
+	instance: <b>{{$index}} - {{$value}}</b>
+	<button on-click="removeInstance($index)">remove</button>
+	<button>set active (not working yet)</button>
+</div>
+
+<div wys-widget id="cmp-34533624">
+	<div>
+		<ul wys-widget id="cmp-78866933">
+			<li class="k-state-active">
+				Widgets
+				<div>
+					<ul>
+						<li repeat="widgets">
+							<div wys-widget id="cmp-33211243" data-bind="events: {click: addComponent}">
+								<span>{{$value.text}}</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<div>
+		<div *ngIf="instances[0]">
+			<wys-component [subcomponents]="instances[0].subcomponents" [template]="instances[0].metadata.template"></wys-component>
+		</div>
+	</div>
+
+	<div>
+	
+		<ul wys-widget id="cmp-67236100">
+			
+			<li>
+				Canvas Properties
+				<div id="canvasProperties">
+					<ul>
+						<li>
+							<span>Background Color:</span>
+							<input data-role="wyswidget" id="cmp-91528871" />
+						</li>
+						<li>
+							<span>Layout:</span>
+							<input data-role="wyswidget" id="cmp-47009081" />
+						</li>
+					</ul>
+				</div>
+			</li>
+			
+			<li>
+				Align
+				<div id="alignConfiguration">
+					<button class="configurationButtons" data-position="top">
+						<span class="alignTop"></span>
+					</button>
+					<button class="configurationButtons" data-position="bottom">
+						<span class="alignBottom"></span>
+					</button>
+					<button class="configurationButtons" data-position="left">
+						<span class="alignLeft"></span>
+					</button>
+					<button class="configurationButtons" data-position="right">
+						<span class="alignRight"></span>
+					</button>
+				</div>
+			</li>
+			
+			<li>
+				Arrange
+				<div id="arrangeConfiguration">
+					<div style="width: 100%; padding: 10px; box-sizing: border-box; text-align: left;">
+						<button class="configurationButtons">
+							<span class="toFront"></span>
+						</button>
+						<button class="configurationButtons">
+							<span class="toBack"></span>
+						</button>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+	</div>
+</div>

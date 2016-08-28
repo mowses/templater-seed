@@ -1,0 +1,21 @@
+{
+  "name": "templater-seed",
+  "version": "1.0.0",
+  "scripts": {
+    "kendo-init": "cd ./node_modules/kendo-ui-core/ && npm run build",
+    "kendo-build": "cd ./node_modules/kendo-ui-core/ && gulp build",
+    "kendo-custom": "cd ./node_modules/kendo-ui-core/ && gulp custom -c",
+    "server": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "connect": "^3.4.1",
+    "kendo-ui-core": "https://github.com/telerik/kendo-ui-core.git",
+    "Events": "https://github.com/mowses/Events.git",
+    "ObjDiff": "https://github.com/mowses/ObjDiff.git",
+    "ObserverCore": "https://github.com/mowses/ObserverCore.git",
+    "Templater": "https://github.com/mowses/Templater.git",
+    "serve-static": "^1.11.1"
+  }
+}
